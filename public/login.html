@@ -1,17 +1,34 @@
-<div class="login-page">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Welcome</title>
+  <link href="css/login.css" type="text/css" rel="stylesheet" media="screen,projection" />
+   <!--Qlik-specific content-->
+   <script src="https://windows2012-cii/resources/assets/external/requirejs/require.js"></script>
+
+</head>
+
+<body>
+  <div class="login-page">
     <div class="form">
-      <form class="register-form">
-        <input type="text" placeholder="name"/>
-        <input type="password" placeholder="password"/>
-        <input type="text" placeholder="email address"/>
-        <button>create</button>
-        <p class="message">Already registered? <a href="#">Sign In</a></p>
-      </form>
       <form class="login-form">
-        <input type="text" placeholder="username"/>
-        <input type="password" placeholder="password"/>
-        <button>login</button>
+        <input type="text" placeholder="username" id="username"/>
+        <input type="password" placeholder="password" id="password"/>
+        <button class="login">login</button>
         <p class="message">Not registered? <a href="#">Create an account</a></p>
       </form>
     </div>
   </div>
+
+
+  <!--  Scripts-->
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/login.js"></script>
+
+</body>
+
+</html>
