@@ -1,28 +1,25 @@
-/*
- * Basic responsive mashup template
- * @owner Enter you name here (xxx)
- */
-/*
- *    Fill in host and port for Qlik engine
- */
-var prefix = window.location.pathname.substr(0, window.location.pathname.toLowerCase().lastIndexOf("/extensions") + 1);
+
+
 var config = {
 	/*host: window.location.hostname,*/
 	host: "windows2012-cii",
 	/*prefix: prefix,*/
 	prefix:"/ticket/",
 	/*port: window.location.port,*/
-	port: 80,
+	port: 443,
 	/*isSecure: window.location.protocol === "https:"*/
-	isSecure: false
+	isSecure: true
 };
+
 require.config({
 	baseUrl: (config.isSecure ? "https://" : "http://") + config.host + (config.port ? ":" + config.port : "") + config.prefix + "resources"
 	
+	
+	
 });
 
-var pippo= (config.isSecure ? "https://" : "http://") + config.host + (config.port ? ":" + config.port : "") + config.prefix + "resources"
-console.log("BaseURl", pippo);
+
+
 require(["js/qlik"], function (qlik) {
 	qlik.setOnError(function (error) {
 		$('#popupText').append(error.message + "<br>");
